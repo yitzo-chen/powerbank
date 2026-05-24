@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>行動電源比較表 2026｜精選 5 款推薦</title>
+<title>行動電源比較表 2026｜7 款推薦評分</title>
 <style>
   :root {
     --gold: #E8A820; --green: #4CAF50; --red: #E53935;
@@ -15,7 +15,7 @@
   h1 { text-align: center; padding: 28px 16px 8px; font-size: 1.5rem; }
   .subtitle { text-align: center; color: var(--gray); font-size: .85rem; padding-bottom: 20px; }
   .scroll-wrap { overflow-x: auto; padding: 0 12px 8px; }
-  table { border-collapse: collapse; min-width: 860px; width: 100%; background: var(--card); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.1); }
+  table { border-collapse: collapse; min-width: 960px; width: 100%; background: var(--card); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.1); }
   thead th { background: #263238; color: #fff; padding: 12px 10px; font-size: .82rem; text-align: center; white-space: nowrap; }
   tbody tr:nth-child(even) { background: #FAFAFA; }
   tbody td { padding: 11px 10px; font-size: .84rem; text-align: center; border-bottom: 1px solid var(--border); vertical-align: middle; }
@@ -26,6 +26,9 @@
   .badge.full   { background:#FBE9E7; color:#BF360C; }
   .badge.stand  { background:#E8F5E9; color:#2E7D32; }
   .badge.snoopy { background:#FFF9C4; color:#F57F17; }
+  .badge.info   { background:#F3E5F5; color:#6A1B9A; }
+  .badge.delta  { background:#E8EAF6; color:#283593; }
+  .badge.new    { background:#FFE0B2; color:#E65100; font-size:.68rem; margin-left:4px; }
   .check { color: var(--green); font-size: 1.1rem; }
   .cross { color: var(--red); font-size: 1.1rem; }
   .warn  { color: #FB8C00; font-size: 1rem; }
@@ -35,11 +38,25 @@
   .tag-dual { background:#E8F5E9; color:#2E7D32; border-radius:4px; padding:1px 6px; font-size:.72rem; font-weight:700; }
   .tag-no   { background:#FFEBEE; color:#C62828; border-radius:4px; padding:1px 6px; font-size:.72rem; font-weight:700; }
 
+  /* Score */
+  .score-big { font-size:1.8rem; font-weight:900; line-height:1; }
+  .score-s { font-size:.72rem; color:var(--gray); }
+  .score-wrap { text-align:center; }
+  .s9  { color:#2E7D32; }
+  .s8  { color:#388E3C; }
+  .s75 { color:#689F38; }
+  .s7  { color:#F9A825; }
+  .s65 { color:#F57F17; }
+  .s6  { color:#E53935; }
+  .s5  { color:#B71C1C; }
+
   /* Cards */
-  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; padding: 16px 12px 32px; }
-  .card { background: var(--card); border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.1); padding: 20px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 16px 12px 32px; }
+  .card { background: var(--card); border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.1); padding: 20px; position:relative; }
+  .card.top { border: 2px solid #4CAF50; }
   .card img { width: 100%; height: 200px; object-fit: contain; border-radius: 10px; margin-bottom: 14px; background: #f9f9f9; display: block; }
-  .card-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 4px; }
+  .card-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px; }
+  .card-title { font-size: 1.05rem; font-weight: 700; }
   .card-sub { font-size: .78rem; color: var(--gray); margin-bottom: 14px; line-height: 1.6; }
   .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
   .pros h4 { color: var(--green); font-size: .78rem; margin-bottom: 5px; }
@@ -49,115 +66,298 @@
   .cons li::before { content: '✗ '; color: var(--red); }
   .card-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
   .card-links a { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 5px 12px; font-size: .75rem; }
+  .corner-badge { position:absolute; top:12px; right:12px; background:#4CAF50; color:#fff; font-size:.7rem; font-weight:700; padding:3px 8px; border-radius:99px; }
+  .corner-badge.warn-b { background:#FB8C00; }
+  .corner-badge.new-b { background:#1976D2; }
 
   .section-title { font-size: 1.1rem; font-weight: 700; padding: 20px 12px 8px; }
   .notice { background: #FFF3E0; border-left: 4px solid #FB8C00; padding: 12px 16px; margin: 0 12px 16px; border-radius: 0 8px 8px 0; font-size: .84rem; line-height: 1.6; }
   .notice strong { color: #E65100; }
+  .notice.green { background:#E8F5E9; border-color:#4CAF50; }
+  .notice.green strong { color:#2E7D32; }
+
+  /* Score legend */
+  .score-legend { display:flex; flex-wrap:wrap; gap:10px; padding:10px 12px 20px; font-size:.78rem; }
+  .score-legend span { background:var(--card); border:1px solid var(--border); border-radius:6px; padding:4px 12px; }
 </style>
 </head>
 <body>
 
-<h1>⚡ 行動電源精選 2026｜5 款推薦</h1>
-<p class="subtitle">預算 NT$2,000 以下・BSMI 認證・飛安合規・iPhone + Android 雙機相容</p>
+<h1>⚡ 行動電源精選 2026｜7 款完整評分比較</h1>
+<p class="subtitle">預算 NT$2,000 以下・iPhone 11（Lightning）+ 三星（USB-C）雙機用戶・評分依使用需求加權</p>
 
 <div class="notice">
-  💡 <strong>iPhone 11（Lightning）+ 三星（USB-C）雙機用戶：</strong>優先選自帶 L+C 雙線款，出門不需另帶充電線。<br>
-  ⚠️ iPhone 11 不支援 Qi2 磁吸，但可用 Qi 7.5W 無線充電；換 iPhone 12+ 後自動升級 Qi2 15W 最高速。
+  💡 <strong>評分說明：</strong>依照「耐用保固不出問題 > 雙機相容 > 通勤出國便利 > 無線充電 > CP值」五項需求加權評分，滿分 10 分。<br>
+  ⚠️ iPhone 11 不支援 Qi2 磁吸無線充電，僅支援 Qi 7.5W；換 iPhone 12+ 後可升級 Qi2 15W。
 </div>
 
-<!-- 規格表 -->
-<div class="section-title">📊 規格速覽表</div>
+<!-- 評分速覽表 -->
+<div class="section-title">📊 規格與評分速覽表</div>
 <div class="scroll-wrap">
 <table>
 <thead>
 <tr>
-  <th>#</th><th>品牌型號</th><th>推薦定位</th>
-  <th>容量</th><th>無線充電</th><th>有線輸出</th>
-  <th>重量</th><th>售價</th><th>BSMI</th>
-  <th>保固</th><th>自帶線</th><th>支架</th>
+  <th>評分</th><th>品牌型號</th><th>定位</th>
+  <th>容量</th><th>無線</th><th>有線輸出</th>
+  <th>重量</th><th>售價</th><th>保固</th><th>自帶線</th><th>BSMI</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td>1</td>
-  <td class="name">iWALK MAGO</td>
-  <td><span class="badge budget">🏅 CP值王</span></td>
-  <td>10000mAh</td><td>Qi2 15W</td><td><strong>30W</strong></td>
-  <td>218g</td><td class="price">NT$1,190</td>
-  <td class="check">✓</td><td>12月</td>
-  <td><span class="tag-dual">L+C 雙線</span></td><td class="cross">✗</td>
-</tr>
-<tr>
-  <td>2</td>
-  <td class="name">POLYBATT T10</td>
-  <td><span class="badge made">🇹🇼 台製輕量</span></td>
-  <td>10000mAh</td><td>磁吸 15W</td><td>20W</td>
-  <td><strong>189g</strong></td><td class="price">NT$1,490</td>
-  <td class="check">✓</td><td><strong>1年</strong></td>
-  <td><span class="tag-dual">L+C 雙線</span></td><td class="cross">✗</td>
-</tr>
-<tr>
-  <td>3</td>
+  <td><strong class="s75">7.5</strong></td>
   <td class="name">LaPO Qi2</td>
-  <td><span class="badge full">🖥️ 功能全面</span></td>
+  <td><span class="badge full">🏆 推薦首選</span></td>
   <td>10000mAh</td><td>Qi2 15W</td><td>22.5W</td>
   <td>240g</td><td class="price">NT$1,580</td>
-  <td class="check">✓</td><td><strong>18月</strong></td>
+  <td><strong>18月</strong></td>
   <td><span class="tag-dual">L+C 雙線</span></td><td class="check">✓</td>
 </tr>
 <tr>
-  <td>4</td>
-  <td class="name">TORRAS Ostand Qi2</td>
-  <td><span class="badge stand">🥈 追劇支架</span></td>
-  <td>10000mAh</td><td>Qi2 15W</td><td>20W</td>
-  <td>200g</td><td class="price">NT$1,490</td>
-  <td class="check">✓</td><td>12月</td>
-  <td><span class="tag-no">無自帶線</span></td><td class="check">✓ 360°</td>
+  <td><strong class="s75">7.5</strong></td>
+  <td class="name">POLYBATT T10</td>
+  <td><span class="badge made">🇹🇼 台製可靠</span></td>
+  <td>10000mAh</td><td>磁吸 15W</td><td>20W</td>
+  <td><strong>189g</strong></td><td class="price">NT$1,490</td>
+  <td><strong>1年</strong></td>
+  <td><span class="tag-dual">L+C 雙線</span></td><td class="check">✓</td>
 </tr>
 <tr>
-  <td>5</td>
+  <td><strong class="s7">7.0</strong></td>
+  <td class="name">Innergie 45W Qi2 <span class="badge new">新加入</span></td>
+  <td><span class="badge delta">⚡ 大廠高瓦數</span></td>
+  <td>10200mAh</td><td>Qi2 15W</td><td><strong>45W</strong></td>
+  <td>—</td><td class="price">NT$1,890</td>
+  <td>1年</td>
+  <td><span class="tag-no">無雙線</span></td><td class="check">✓</td>
+</tr>
+<tr>
+  <td><strong class="s65">6.5</strong></td>
+  <td class="name">iWALK MAGO</td>
+  <td><span class="badge budget">💰 最低售價</span></td>
+  <td>10000mAh</td><td>Qi2 15W</td><td><strong>30W</strong></td>
+  <td>218g</td><td class="price">NT$1,190</td>
+  <td>12月</td>
+  <td><span class="tag-dual">L+C 雙線</span></td><td class="check">✓</td>
+</tr>
+<tr>
+  <td><strong class="s65">6.5</strong></td>
+  <td class="name">InfoThink 八合一MAX <span class="badge new">新加入</span></td>
+  <td><span class="badge info">🔌 多合一充</span></td>
+  <td>10000mAh</td><td>磁吸 15W</td><td>30W</td>
+  <td>230g</td><td class="price">NT$1,297起</td>
+  <td class="warn">功能1年*</td>
+  <td><span class="tag-dual">L+C 雙線</span></td><td class="check">✓</td>
+</tr>
+<tr>
+  <td><strong class="s6">6.0</strong></td>
   <td class="name">SNOOPY 七合一</td>
   <td><span class="badge snoopy">🐾 史努比款</span></td>
   <td>12000mAh</td><td>磁吸 15W</td><td>20W</td>
   <td>257g</td><td class="price">NT$1,297～1,770</td>
-  <td class="check">✓</td><td class="warn">6月</td>
+  <td class="warn">6月</td>
   <td><span class="tag-dual">L+C 雙線</span></td><td class="check">✓</td>
+</tr>
+<tr>
+  <td><strong class="s5">5.5</strong></td>
+  <td class="name">TORRAS Ostand Qi2</td>
+  <td><span class="badge stand">📱 追劇支架</span></td>
+  <td>10000mAh</td><td>Qi2 15W</td><td>20W</td>
+  <td>200g</td><td class="price">NT$1,490</td>
+  <td>12月</td>
+  <td><span class="tag-no">無自帶線</span></td><td class="check">✓</td>
 </tr>
 </tbody>
 </table>
 </div>
 
 <!-- 卡片區 -->
-<div class="section-title">📋 各款優缺點＋連結</div>
+<div class="section-title">📋 各款詳細評分＋優缺點</div>
 <div class="cards">
 
-<!-- iWALK MAGO -->
-<div class="card">
-  <img src="https://img.pchome.com.tw/cs/items/DYAO44A900J2S0U/000001_1753774503.jpg" alt="iWALK MAGO">
-  <div class="card-title">🏅 iWALK MAGO <span class="badge budget">CP值王</span></div>
+<!-- LaPO Qi2 -->
+<div class="card top">
+  <div class="corner-badge">推薦首選</div>
+  <img src="https://img.pchome.com.tw/cs/items/DYAO44A900JDXUD/000001_1761717368.jpg" alt="LaPO Qi2">
+  <div class="card-header">
+    <div>
+      <div class="card-title">LaPO Qi2 <span class="badge full">功能全面</span></div>
+    </div>
+    <div class="score-wrap">
+      <div class="score-big s75">7.5</div>
+      <div class="score-s">/10</div>
+    </div>
+  </div>
   <div class="card-sub">
-    10000mAh・Qi2 15W 無線・<strong>30W 有線最快</strong><br>
-    218g・NT$1,190・自帶 Lightning + USB-C 雙線
+    10000mAh・Qi2 15W 無線・22.5W 有線<br>
+    240g・NT$1,580・自帶 L+C 雙線・<strong>保固 18 月最長</strong>・指環支架
   </div>
   <div class="pros-cons">
     <div class="pros">
       <h4>優點</h4>
       <ul>
-        <li>最便宜 NT$1,190</li>
-        <li>自帶雙線 L+C</li>
-        <li>30W 有線最快</li>
+        <li>保固 18 月業界最長</li>
         <li>Qi2 正式認證</li>
-        <li>MagCool 溫控</li>
-        <li>五重安全保護</li>
+        <li>磁吸最強 13N</li>
+        <li>自帶 L+C 雙線</li>
+        <li>彩色 TFT 電量螢幕</li>
+        <li>指環＋支架雙用</li>
+        <li>PTT/Dcard 長期高評價</li>
       </ul>
     </div>
     <div class="cons">
       <h4>缺點</h4>
       <ul>
-        <li>台灣售後待確認</li>
-        <li>線頭偏大易卡殼</li>
-        <li>磁吸力稍弱</li>
+        <li>240g 七款中偏重</li>
+        <li>有線輸出僅 22.5W</li>
+        <li>無折疊 AC 插頭</li>
+        <li>早期批次：插頭易起火花、轉軸殼裂開（新批次已改善）</li>
+        <li>無線充電時發熱明顯</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-links">
+    <a href="https://24h.pchome.com.tw/prod/DYAO44-A900JDXUD" target="_blank">🛒 PChome</a>
+    <a href="https://ksk.tw/lapo-qi2/" target="_blank">📝 凱子凱開箱</a>
+    <a href="https://www.fanfan.com.tw/qi2/" target="_blank">📝 FanFan 評測</a>
+  </div>
+</div>
+
+<!-- POLYBATT T10 -->
+<div class="card top">
+  <div class="corner-badge">台灣製造</div>
+  <img src="https://img.pchome.com.tw/cs/items/DYAO44A900IVNCY/000001_1760193064.jpg" alt="POLYBATT T10">
+  <div class="card-header">
+    <div>
+      <div class="card-title">POLYBATT T10 <span class="badge made">台製可靠</span></div>
+    </div>
+    <div class="score-wrap">
+      <div class="score-big s75">7.5</div>
+      <div class="score-s">/10</div>
+    </div>
+  </div>
+  <div class="card-sub">
+    10000mAh・磁吸 15W 無線・20W 有線<br>
+    <strong>189g 最輕</strong>・NT$1,490・自帶 L+C 雙線・BSMI/NCC 雙認證・<strong>台灣製造</strong>
+  </div>
+  <div class="pros-cons">
+    <div class="pros">
+      <h4>優點</h4>
+      <ul>
+        <li>台灣製造，BSMI/NCC 雙認證</li>
+        <li>189g 全場最輕</li>
+        <li>自帶 L+C 雙線</li>
+        <li>保固 1 年，品質穩定</li>
+        <li>無重大災情紀錄</li>
+        <li>多色系可選</li>
+        <li>電量數字顯示螢幕</li>
+      </ul>
+    </div>
+    <div class="cons">
+      <h4>缺點</h4>
+      <ul>
+        <li>非 Qi2 正式認證</li>
+        <li>有線最高輸出僅 20W</li>
+        <li>Lightning 輸出僅 12W</li>
+        <li>品牌知名度較低</li>
         <li>無支架功能</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-links">
+    <a href="https://www.polybatt.com.tw/products/t10-black" target="_blank">🛒 POLYBATT 官網</a>
+    <a href="https://24h.pchome.com.tw/prod/DYAO44-A900IVNCY" target="_blank">🛒 PChome</a>
+    <a href="https://yaping.tw/polybatt-t10/" target="_blank">📝 評測文章</a>
+  </div>
+</div>
+
+<!-- Innergie 45W Qi2 -->
+<div class="card">
+  <div class="corner-badge new-b">新加入</div>
+  <img src="https://myinnergie.com/tw/wp-content/uploads/2024/09/Innergie_45WQi2_BatteryPack_10200mAh_01-600x600.png" alt="Innergie 45W Qi2" onerror="this.src='https://via.placeholder.com/400x200?text=Innergie+45W+Qi2'">
+  <div class="card-header">
+    <div>
+      <div class="card-title">台達 Innergie 45W Qi2 <span class="badge delta">大廠高瓦</span></div>
+    </div>
+    <div class="score-wrap">
+      <div class="score-big s7">7.0</div>
+      <div class="score-s">/10</div>
+    </div>
+  </div>
+  <div class="card-sub">
+    10200mAh・Qi2 15W 無線・<strong>45W 有線最強</strong><br>
+    NT$1,890・台達電子（大廠）・日本 Good Design 獎・<strong>無內建 Lightning 線</strong>
+  </div>
+  <div class="pros-cons">
+    <div class="pros">
+      <h4>優點</h4>
+      <ul>
+        <li>台達電子大廠背書</li>
+        <li>45W 有線輸出最強</li>
+        <li>Qi2 正式認證</li>
+        <li>雙 USB-C 孔設計</li>
+        <li>日本 Good Design 設計獎</li>
+        <li>台灣製造，BSMI 認證</li>
+        <li>2025/4 後出廠批次已改善誤觸發</li>
+      </ul>
+    </div>
+    <div class="cons">
+      <h4>缺點</h4>
+      <ul>
+        <li>⚠️ 無內建 Lightning 線（需自備）</li>
+        <li>早期品管出包，急著出貨</li>
+        <li>Mobile01 拆解文稱「令人失望」</li>
+        <li>磁吸充電力較弱</li>
+        <li>霧面材質易刮傷</li>
+        <li>25W+ 過熱後降功</li>
+        <li>AirPods 需手動對準才能充</li>
+        <li>售價 NT$1,890 接近預算上限</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-links">
+    <a href="https://myinnergie.com/tw/product/45w-qi2-battery-pack-10200mah/" target="_blank">🛒 Innergie 官網</a>
+    <a href="https://24h.pchome.com.tw/search/?q=innergie+qi2" target="_blank">🛒 PChome</a>
+    <a href="https://www.mobile01.com/topicdetail.php?f=738&t=7154913" target="_blank">📝 Mobile01 拆解評測</a>
+  </div>
+</div>
+
+<!-- iWALK MAGO -->
+<div class="card">
+  <img src="https://img.pchome.com.tw/cs/items/DYAO44A900J2S0U/000001_1753774503.jpg" alt="iWALK MAGO">
+  <div class="card-header">
+    <div>
+      <div class="card-title">iWALK MAGO <span class="badge budget">最低售價</span></div>
+    </div>
+    <div class="score-wrap">
+      <div class="score-big s65">6.5</div>
+      <div class="score-s">/10</div>
+    </div>
+  </div>
+  <div class="card-sub">
+    10000mAh・Qi2 15W 無線・<strong>30W 有線快</strong><br>
+    218g・<strong>NT$1,190 最便宜</strong>・自帶 L+C 雙線
+  </div>
+  <div class="pros-cons">
+    <div class="pros">
+      <h4>優點</h4>
+      <ul>
+        <li>NT$1,190 七款最便宜</li>
+        <li>Qi2 正式認證</li>
+        <li>30W 有線充電快</li>
+        <li>自帶 L+C 雙線</li>
+        <li>MagCool 溫控設計</li>
+        <li>可換線（換機後繼續用）</li>
+      </ul>
+    </div>
+    <div class="cons">
+      <h4>缺點</h4>
+      <ul>
+        <li>⚠️ 線頭偏大，厚手機殼易卡</li>
+        <li>長期使用接頭易鬆動</li>
+        <li>超過 15 分鐘後過熱降速</li>
+        <li>磁吸穩定度稍弱</li>
+        <li>保固 12 月偏短</li>
+        <li>台灣售後服務待確認</li>
       </ul>
     </div>
   </div>
@@ -168,102 +368,137 @@
   </div>
 </div>
 
-<!-- POLYBATT T10 -->
+<!-- InfoThink 八合一MAX -->
 <div class="card">
-  <img src="https://img.pchome.com.tw/cs/items/DYAO44A900IVNCY/000001_1760193064.jpg" alt="POLYBATT T10">
-  <div class="card-title">🇹🇼 POLYBATT T10 <span class="badge made">台製輕量</span></div>
+  <div class="corner-badge new-b">新加入</div>
+  <img src="http://www.infothink.com.tw/sites/default/files/2025-10/8%E5%90%881%E8%A1%8C%E9%9B%BB-1.jpg" alt="InfoThink 八合一MAX" onerror="this.src='https://via.placeholder.com/400x200?text=InfoThink+8in1+MAX'">
+  <div class="card-header">
+    <div>
+      <div class="card-title">InfoThink 八合一MAX <span class="badge info">多合一</span></div>
+    </div>
+    <div class="score-wrap">
+      <div class="score-big s65">6.5</div>
+      <div class="score-s">/10</div>
+    </div>
+  </div>
   <div class="card-sub">
-    10000mAh・磁吸 15W 無線・20W 有線<br>
-    <strong>189g 最輕</strong>・NT$1,490・自帶 Lightning + USB-C 雙線・<strong>保固 1 年</strong>
+    10000mAh・磁吸無線 15W・30W 有線・自帶 L+C 雙線<br>
+    230g・NT$1,297起・台灣設計製造・<strong>5 台裝置同時充電</strong>・360° 支架＋AC 插頭
   </div>
   <div class="pros-cons">
     <div class="pros">
       <h4>優點</h4>
       <ul>
-        <li>台灣製 BSMI/NCC 認證</li>
-        <li>189g 全場最輕</li>
-        <li>自帶雙線 L+C</li>
-        <li>磁吸無線充 15W</li>
-        <li>保固 1 年最長</li>
-        <li>多色可選</li>
+        <li>台灣設計製造，BSMI 認證</li>
+        <li>自帶 L+C 雙線（非直插）</li>
+        <li>30W 有線輸出</li>
+        <li>支援同時充 5 台裝置</li>
+        <li>360° 旋轉支架</li>
+        <li>內建 AC 折疊插頭（出國免帶充電頭）</li>
+        <li>Apple Watch + AirPods 無線充電</li>
       </ul>
     </div>
     <div class="cons">
       <h4>缺點</h4>
       <ul>
+        <li>⚠️ 早期品管問題（Mobile01 負評）</li>
+        <li>磁吸易誤觸發（包包裡放電）</li>
         <li>非 Qi2 正式認證</li>
-        <li>有線輸出僅 20W</li>
-        <li>Lightning 僅 12W</li>
-        <li>知名度較低</li>
+        <li>體積偏大 70×75×28mm</li>
+        <li>PTT 有人質疑台製真偽</li>
+        <li>外觀保固僅限新品瑕疵</li>
       </ul>
     </div>
   </div>
   <div class="card-links">
-    <a href="https://www.polybatt.com.tw/products/t10-black" target="_blank">🛒 POLYBATT 官網</a>
-    <a href="https://24h.pchome.com.tw/prod/DYAO44-A900IVNCY" target="_blank">🛒 PChome</a>
+    <a href="http://www.infothink.com.tw/zh-hant/node/1978" target="_blank">🛒 InfoThink 官網</a>
+    <a href="https://24h.pchome.com.tw/prod/DYBAD5-A900I32GF" target="_blank">🛒 PChome</a>
   </div>
 </div>
 
-<!-- LaPO Qi2 -->
+<!-- SNOOPY 七合一 -->
 <div class="card">
-  <img src="https://img.pchome.com.tw/cs/items/DYAO44A900JDXUD/000001_1761717368.jpg" alt="LaPO Qi2">
-  <div class="card-title">🖥️ LaPO Qi2 <span class="badge full">功能全面</span></div>
+  <img src="https://img.pchome.com.tw/cs/items/DECU6LA900HDQFH/000001_1712823876.jpg" alt="SNOOPY 七合一">
+  <div class="card-header">
+    <div>
+      <div class="card-title">SNOOPY 七合一 <span class="badge snoopy">史努比款</span></div>
+    </div>
+    <div class="score-wrap">
+      <div class="score-big s6">6.0</div>
+      <div class="score-s">/10</div>
+    </div>
+  </div>
   <div class="card-sub">
-    10000mAh・Qi2 15W 無線・22.5W 有線<br>
-    240g・NT$1,580・自帶 Lightning + USB-C 雙線・<strong>保固 18 月</strong>
+    12000mAh・磁吸 15W 無線・20W 有線・自帶 L+C 雙線<br>
+    257g・NT$1,297～1,770・PEANUTS 正版授權・<strong>內建 AC 折疊插頭</strong>
   </div>
   <div class="pros-cons">
     <div class="pros">
       <h4>優點</h4>
       <ul>
-        <li>彩色 TFT 電量螢幕</li>
-        <li>自帶雙線 L+C</li>
-        <li>磁吸最強 13N</li>
-        <li>指環＋支架雙用</li>
-        <li>保固 18 月</li>
+        <li>PEANUTS 正版授權</li>
+        <li>容量最大 12000mAh</li>
+        <li>自帶 L+C 雙線</li>
+        <li>內建 AC 插頭（出國免帶插頭）</li>
+        <li>LED 電量顯示螢幕</li>
+        <li>BSMI/NCC 雙認證</li>
       </ul>
     </div>
     <div class="cons">
       <h4>缺點</h4>
       <ul>
-        <li>240g 四款最重</li>
-        <li>有線僅 22.5W</li>
-        <li>售價無明顯優勢</li>
+        <li>⚠️ 保固僅 6 個月（最短）</li>
+        <li>線材不在保固範圍</li>
+        <li>非 Qi2 正式認證</li>
+        <li>257g 七款最重</li>
+        <li>OEM 來源不明確</li>
+        <li>同款價差高達 NT$470+</li>
       </ul>
     </div>
   </div>
   <div class="card-links">
-    <a href="https://www.lapo.com.tw/zh-TW/collections/3c003" target="_blank">🛒 LaPO 官網</a>
-    <a href="https://ksk.tw/lapo-qi2/" target="_blank">📝 凱子凱開箱</a>
-    <a href="https://www.fanfan.com.tw/qi2/" target="_blank">📝 FanFan 評測</a>
+    <a href="https://24h.pchome.com.tw/prod/DECU6L-A900HDQFH" target="_blank">🛒 PChome</a>
+    <a href="https://www.books.com.tw/products/N013586397" target="_blank">🛒 博客來</a>
+    <a href="https://tw.buy.yahoo.com/gdsale/%E5%8F%B2%E5%8A%AA%E6%AF%94-%E4%B8%83%E5%90%88%E4%B8%80%E9%9B%99%E7%B7%9A%E7%A3%81%E5%90%B8%E7%84%A1%E7%B7%9A%E5%85%85%E8%A1%8C%E5%8B%95%E9%9B%BB%E6%BA%90-%E8%90%AC%E7%94%A8%E5%85%85-12000mAh-11006107.html" target="_blank">🛒 Yahoo</a>
   </div>
 </div>
 
 <!-- TORRAS Ostand Qi2 -->
 <div class="card">
   <img src="https://img.pchome.com.tw/cs/items/DYAO44A900HW6EL/000001_1764928736.jpg" alt="TORRAS Ostand Qi2">
-  <div class="card-title">🥈 TORRAS Ostand Qi2 <span class="badge stand">追劇支架</span></div>
+  <div class="card-header">
+    <div>
+      <div class="card-title">TORRAS Ostand Qi2 <span class="badge stand">追劇支架</span></div>
+    </div>
+    <div class="score-wrap">
+      <div class="score-big s5">5.5</div>
+      <div class="score-s">/10</div>
+    </div>
+  </div>
   <div class="card-sub">
     10000mAh・Qi2 15W 無線・20W 有線<br>
-    200g・NT$1,490・<strong>⚠️ 無自帶線</strong>・360° 旋轉支架
+    200g・NT$1,490・<strong>⚠️ 無自帶線</strong>・360° 鋁合金旋轉支架
   </div>
   <div class="pros-cons">
     <div class="pros">
       <h4>優點</h4>
       <ul>
         <li>360° 鋁合金旋轉支架</li>
-        <li>磁吸力強 12.9N</li>
-        <li>追劇立放最方便</li>
-        <li>200g 輕巧</li>
         <li>Qi2 正式認證</li>
+        <li>磁吸 12.9N 強力吸附</li>
+        <li>200g 輕巧</li>
+        <li>無重大品質災情</li>
+        <li>橫豎立放追劇最佳</li>
       </ul>
     </div>
     <div class="cons">
       <h4>缺點</h4>
       <ul>
         <li>⚠️ 完全無自帶線</li>
-        <li>雙機用戶需帶兩條線</li>
-        <li>有線僅 20W</li>
+        <li>雙機用戶出門需帶 2 條線</li>
+        <li>皮革背面易刮傷掉漆</li>
+        <li>有用戶反映比其他款更易發燙</li>
+        <li>有線輸出僅 20W（最低）</li>
         <li>保固僅 12 月</li>
       </ul>
     </div>
@@ -275,57 +510,101 @@
   </div>
 </div>
 
-<!-- SNOOPY 七合一 -->
-<div class="card">
-  <img src="https://img.pchome.com.tw/cs/items/DECU6LA900HDQFH/000001_1712823876.jpg" alt="SNOOPY 七合一">
-  <div class="card-title">🐾 SNOOPY 七合一 <span class="badge snoopy">史努比款</span></div>
-  <div class="card-sub">
-    12000mAh・磁吸 15W 無線・20W 有線<br>
-    257g・NT$1,297～1,770・自帶 Lightning + USB-C 雙線・<strong>內建 AC 插頭</strong>
-  </div>
-  <div class="pros-cons">
-    <div class="pros">
-      <h4>優點</h4>
-      <ul>
-        <li>PEANUTS 正版授權</li>
-        <li>自帶雙線 L+C</li>
-        <li>內建 AC 折疊插頭</li>
-        <li>出國一顆搞定充電器</li>
-        <li>容量最大 12000mAh</li>
-        <li>LED 電量顯示螢幕</li>
-        <li>BSMI/NCC 雙認證</li>
-      </ul>
-    </div>
-    <div class="cons">
-      <h4>缺點</h4>
-      <ul>
-        <li>⚠️ 保固僅 6 個月</li>
-        <li>線材不在保固範圍</li>
-        <li>257g 五款最重</li>
-        <li>非 Qi2 正式認證</li>
-      </ul>
-    </div>
-  </div>
-  <div class="card-links">
-    <a href="https://24h.pchome.com.tw/prod/DECU6L-A900HDQFH" target="_blank">🛒 PChome</a>
-    <a href="https://www.books.com.tw/products/N013586397" target="_blank">🛒 博客來</a>
-    <a href="https://tw.buy.yahoo.com/gdsale/%E5%8F%B2%E5%8A%AA%E6%AF%94-%E4%B8%83%E5%90%88%E4%B8%80%E9%9B%99%E7%B7%9A%E7%A3%81%E5%90%B8%E7%84%A1%E7%B7%9A%E5%85%85%E8%A1%8C%E5%8B%95%E9%9B%BB%E6%BA%90-%E8%90%AC%E7%94%A8%E5%85%85-12000mAh-11006107.html" target="_blank">🛒 Yahoo</a>
-  </div>
-</div>
-
 </div><!-- /cards -->
+
+<!-- 評分總覽 -->
+<div class="section-title">🏆 評分總覽（依你的需求）</div>
+<div class="notice green">
+  <strong>評分五大維度：</strong>①耐用保固不出問題（35%）②雙機相容 Lightning+USB-C（25%）③通勤出國便利（20%）④無線充電規格（10%）⑤CP 值（10%）
+</div>
+<div class="scroll-wrap">
+<table>
+<thead>
+<tr>
+  <th>排名</th><th>型號</th><th>評分</th>
+  <th>①耐用保固</th><th>②雙機相容</th><th>③通勤出國</th>
+  <th>④無線充電</th><th>⑤CP值</th><th>一句話總結</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>🥇</td><td class="name">LaPO Qi2</td><td><strong class="s75">7.5</strong></td>
+  <td>⭐⭐⭐⭐（18月保固，改良版穩定）</td>
+  <td>⭐⭐⭐⭐（自帶L+C雙線）</td>
+  <td>⭐⭐⭐（240g偏重）</td>
+  <td>⭐⭐⭐⭐（Qi2認證）</td>
+  <td>⭐⭐⭐（偏貴）</td>
+  <td>保固最長，功能最全，CP值略遜</td>
+</tr>
+<tr>
+  <td>🥇</td><td class="name">POLYBATT T10</td><td><strong class="s75">7.5</strong></td>
+  <td>⭐⭐⭐⭐（台灣製，1年保固，無重大災情）</td>
+  <td>⭐⭐⭐⭐（自帶L+C雙線）</td>
+  <td>⭐⭐⭐⭐⭐（189g最輕）</td>
+  <td>⭐⭐⭐（非Qi2）</td>
+  <td>⭐⭐⭐⭐（合理）</td>
+  <td>最輕、台灣製、無災情，唯非Qi2</td>
+</tr>
+<tr>
+  <td>🥉</td><td class="name">Innergie 45W Qi2</td><td><strong class="s7">7.0</strong></td>
+  <td>⭐⭐⭐（台達大廠，但早期品管出包）</td>
+  <td>⭐⭐（無Lightning線，自備才行）</td>
+  <td>⭐⭐⭐（功能強，但偏貴）</td>
+  <td>⭐⭐⭐⭐（Qi2認證）</td>
+  <td>⭐⭐（NT$1,890最貴）</td>
+  <td>45W輸出最強，但無Lightning線且早期有品管問題</td>
+</tr>
+<tr>
+  <td>4</td><td class="name">iWALK MAGO</td><td><strong class="s65">6.5</strong></td>
+  <td>⭐⭐（保固12月，接頭易鬆動，過熱問題）</td>
+  <td>⭐⭐⭐（自帶L+C，但線頭易卡殼）</td>
+  <td>⭐⭐⭐（輕便，但線頭卡殼疑慮）</td>
+  <td>⭐⭐⭐⭐（Qi2認證）</td>
+  <td>⭐⭐⭐⭐⭐（NT$1,190最便宜）</td>
+  <td>最便宜但耐用度有疑慮，線頭易卡殼</td>
+</tr>
+<tr>
+  <td>4</td><td class="name">InfoThink 八合一MAX</td><td><strong class="s65">6.5</strong></td>
+  <td>⭐⭐（早期品管差，Mobile01負評）</td>
+  <td>⭐⭐⭐⭐（自帶L+C雙線）</td>
+  <td>⭐⭐⭐（功能多，但體積大）</td>
+  <td>⭐⭐⭐（非Qi2，磁吸易誤觸發）</td>
+  <td>⭐⭐⭐⭐（NT$1,297起）</td>
+  <td>功能最多，但品管問題是隱患</td>
+</tr>
+<tr>
+  <td>6</td><td class="name">SNOOPY 七合一</td><td><strong class="s6">6.0</strong></td>
+  <td>⭐（保固僅6月，最短）</td>
+  <td>⭐⭐⭐⭐（自帶L+C雙線）</td>
+  <td>⭐⭐⭐⭐（AC插頭，12000mAh）</td>
+  <td>⭐⭐（非Qi2）</td>
+  <td>⭐⭐⭐（價格浮動）</td>
+  <td>史努比最可愛，但保固太短，重視耐用則不推</td>
+</tr>
+<tr>
+  <td>7</td><td class="name">TORRAS Ostand Qi2</td><td><strong class="s5">5.5</strong></td>
+  <td>⭐⭐⭐（無重大災情，但皮革磨損快）</td>
+  <td>⭐（完全無自帶線，雙機用戶需帶2條線）</td>
+  <td>⭐⭐⭐（支架追劇佳）</td>
+  <td>⭐⭐⭐⭐（Qi2認證）</td>
+  <td>⭐⭐⭐（一般）</td>
+  <td>無自帶線是雙機用戶致命缺點</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 <!-- 情境建議 -->
 <div class="section-title">🎯 情境選購建議</div>
 <div class="scroll-wrap">
 <table>
-<thead><tr><th>你的需求</th><th>推薦款</th><th>理由</th></tr></thead>
+<thead><tr><th>你的需求情境</th><th>推薦款</th><th>理由</th></tr></thead>
 <tbody>
-<tr><td>iPhone + 三星雙機・最省錢</td><td><strong>iWALK MAGO</strong></td><td>NT$1,190 最便宜，自帶 L+C 雙線，30W 快充最快</td></tr>
-<tr><td>iPhone + 三星雙機・重視台灣製造</td><td><strong>POLYBATT T10</strong></td><td>台灣製 BSMI，189g 最輕，1年保固，自帶雙線</td></tr>
-<tr><td>保固最長・功能最完整</td><td><strong>LaPO Qi2</strong></td><td>18月保固，自帶雙線＋支架＋彩色螢幕，功能最多</td></tr>
-<tr><td>追劇・桌上立放・單機使用</td><td><strong>TORRAS Ostand Qi2</strong></td><td>360° 鋁合金支架，磁吸強，但無自帶線（需自備）</td></tr>
-<tr><td>喜歡史努比・出國一顆搞定</td><td><strong>SNOOPY 七合一</strong></td><td>正版授權，內建 AC 插頭＋雙線，12000mAh 大容量（保固僅 6 月）</td></tr>
+<tr><td>🏆 最均衡推薦（雙機・保固・通勤）</td><td><strong>LaPO Qi2</strong></td><td>保固最長18月，Qi2認證，自帶雙線，功能最全面</td></tr>
+<tr><td>🇹🇼 重視台灣製造・輕便通勤</td><td><strong>POLYBATT T10</strong></td><td>台灣製BSMI，189g最輕，無重大災情，1年保固</td></tr>
+<tr><td>⚡ 要充筆電・不怕自備線</td><td><strong>Innergie 45W Qi2</strong></td><td>45W最強有線輸出，Qi2認證，但需自備Lightning線</td></tr>
+<tr><td>💰 預算有限・能接受風險</td><td><strong>iWALK MAGO</strong></td><td>NT$1,190最便宜，Qi2認證，但線頭卡殼與耐用度有疑慮</td></tr>
+<tr><td>🐾 喜歡史努比・出國一台搞定</td><td><strong>SNOOPY 七合一</strong></td><td>正版授權，內建AC插頭，容量最大，但保固只6個月</td></tr>
 </tbody>
 </table>
 </div>
@@ -347,7 +626,7 @@
 </div>
 
 <p style="text-align:center;color:#9E9E9E;font-size:.75rem;padding:24px 0 36px;">
-  資料來源：Mobile01・Dcard・mbzhu・各品牌官網 ｜ 價格僅供參考，以各通路實際售價為準 ｜ 2026-05-23 更新
+  資料來源：Mobile01・Dcard・PTT・mbzhu・各品牌官網・實際用戶負評整理 ｜ 價格僅供參考，以各通路實際售價為準 ｜ 2026-05-24 更新
 </p>
 </body>
 </html>
